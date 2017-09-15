@@ -4,3 +4,6 @@
 [submodule "PicoSHA2"]
 	path = PicoSHA2
 	url = https://github.com/okdshin/PicoSHA2
+[submodule "QRL"]
+	path = QRL
+	url = https://github.com/theQRL/QRL.git
