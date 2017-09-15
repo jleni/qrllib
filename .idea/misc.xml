@@ -4,6 +4,7 @@
   <component name="CidrRootsConfiguration">
     <sourceRoots>
       <file path="$PROJECT_DIR$/PicoSHA2" />
+      <file path="$PROJECT_DIR$/QRL" />
       <file path="$PROJECT_DIR$/benchmark" />
       <file path="$PROJECT_DIR$/pyqrllib" />
       <file path="$PROJECT_DIR$/src" />
@@ -14,7 +15,6 @@
       <file path="$PROJECT_DIR$/QRL/qrl" />
     </libraryRoots>
     <excludeRoots>
-      <file path="$PROJECT_DIR$/QRL" />
       <file path="$PROJECT_DIR$/cmake-build-debug" />
       <file path="$PROJECT_DIR$/cmake-build-release" />
       <file path="$PROJECT_DIR$/xmss-reference" />
