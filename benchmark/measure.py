@@ -28,9 +28,9 @@ def measure(test_set,
             verify):
     data = []
 
-    ITERATIONS = 1
-    SAMPLES_CREATE = 1
-    SAMPLES_SIGN = 1
+    ITERATIONS = 3
+    SAMPLES_CREATE = 3
+    SAMPLES_SIGN = 16
     SAMPLES_VERIFY = 1000
 
     with open('data_{}.csv'.format(test_set), 'a') as f:
@@ -38,20 +38,20 @@ def measure(test_set,
         writer = csv.writer(f)
         writer.writerow(field_names)
 
-        for height in range(16, 18, 2):
+        for height in range(4, 18, 2):
             # prepare data
             seed, xmss, message, signature, pk, height = prepare(height)
 
-            r = measure_execution_time(create_key, SAMPLES_CREATE, ITERATIONS, height, seed)
-            writer.writerow([test_set, 'create', height, max(r)])
-
-            print("[{:8}] h={} create {}".format(test_set, height, max(r)))
+            # r = measure_execution_time(create_key, SAMPLES_CREATE, ITERATIONS, height, seed)
+            # writer.writerow([test_set, 'create', height, max(r)])
+            #
+            # print("[{:8}] h={} create {}".format(test_set, height, max(r)))
 
             r = measure_execution_time(sign, SAMPLES_SIGN, ITERATIONS, xmss, message)
             writer.writerow([test_set, 'sign', height, max(r)])
             print("[{:8}] h={} sign   {}".format(test_set, height, max(r)))
 
-            r = measure_execution_time(verify, SAMPLES_VERIFY, ITERATIONS,
-                                       message, signature, pk, height)
-            writer.writerow([test_set, 'verify', height, max(r)])
-            print("[{:8}] h={} verify {}".format(test_set, height, max(r)))
+            # r = measure_execution_time(verify, SAMPLES_VERIFY, ITERATIONS,
+            #                            message, signature, pk, height)
+            # writer.writerow([test_set, 'verify', height, max(r)])
+            # print("[{:8}] h={} verify {}".format(test_set, height, max(r)))
