@@ -2,7 +2,7 @@
 #include <emscripten/bind.h>
 #include <iostream>
 #include <xmssFast.h>
-#include <hashing.h>
+#include <util/hashing.h>
 #include <misc.h>
 #include <wordlist.h>
 #include <qrlHelper.h>
@@ -289,5 +289,4 @@ EMSCRIPTEN_BINDINGS(my_module) {
         .function("setIndex", &XmssWrapper::setIndex)
         .function("sign", &XmssWrapper::sign)
         .class_function("verify", &XmssWrapper::verify);
-}
 }
